@@ -20,7 +20,7 @@ class App {
 			//alert(`Welcome to ${this.appName} - ${this.version} created by ${this.author}.\nPredefined Tasks have been Initiated! I hope you enjoy.`);
 		} else {
 			//console.log(`Loading ${this.dbName} from the localStorage Database...`);
-			utterThis = new SpeechSynthesisUtterance(`Loading ${this.dbName} from the local Storage Database. There are ${this.taskList.length} of them waiting to be completed. I hope you enjoy.`);
+			utterThis = new SpeechSynthesisUtterance(`I have taken the liberty of Loading ${this.dbName} from the local Storage Database. There are ${this.taskList.length} of them waiting to be completed. I hope you enjoy.`);
 			synth.speak(utterThis);
 		}
 		this.loadTasks();
@@ -82,7 +82,9 @@ class App {
 		let today = this.getTodaysDate();
 		for (let i = 0; i < this.taskList.length;  i++) {
 			if (this.taskList[i].dueDate < today) {
-				alert(`Task (${this.taskList[i].task}) Has Went Past It's Due Date.`);
+				utterThis = new SpeechSynthesisUtterance(`${this.taskList[i].task} Has Went Past It's Due Date. It was supposed to be completed by ${this.taskList[i].task}`);
+				synth.speak(utterThis);
+				alert(`Task: (${this.taskList[i].task}) Has Went Past It's Due Date.`);
 			}
 		}
 	}
