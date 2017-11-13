@@ -15,7 +15,7 @@ class App {
 				{task: 'Study', isComplete: false, details: 'Study Math, and Science', category: 'School', dueDate: this.getTodaysDate()},
 				{task: 'Go To Sleep', isComplete: false, details: 'Sleep for at least 6 hours', category: 'Home', dueDate: this.getTodaysDate()},
 			];
-			utterThis = new SpeechSynthesisUtterance(`. Predefined Tasks have been Initiated! There are ${taskList.length} of them waiting to be completed. I hope you enjoy.`);
+			utterThis = new SpeechSynthesisUtterance(`. Predefined Tasks have been Initiated! There are ${this.taskList.length} of them waiting to be completed. I hope you enjoy.`);
 			synth.speak(utterThis);
 			//alert(`Welcome to ${this.appName} - ${this.version} created by ${this.author}.\nPredefined Tasks have been Initiated! I hope you enjoy.`);
 		} else {
