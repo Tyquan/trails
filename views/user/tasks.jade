@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  div(class="container-fluid")
+    div(class="row")
+      div(class="col-md-2")
+        include nav.jade
+      div(class="col-md-10")
+        h1(class="text-center") Task Manager
+        hr
+        div(class="row")
+          div(class="col-md-2")
+            div(id="heads")
+              h3(class="text-center") Add A Task
+            br
+            div(id="addTask")
+          div(class="col-md-10")
+            div(id="heads")
+              h3(class="text-center") Uncompleted Tasks
+            br
+            div
+              div(class="row" id="app")
+  script(src="/javascripts/tasks/app.js")
+  script(src="/javascripts/tasks/addTask.js")

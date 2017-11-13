@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  div(class="container")
+    div(id="auth")
+      h2(class="text-center") Signup
+      form(method="POST" action="/users/signup")
+        p= message
+        div(class="form-group")
+          label(for="username") Email address
+          input(type="email" class="form-control" id="username" aria-describedby="emailHelp" name="username" placeholder="Enter Email" required)
+          small(id="emailHelp" class="form-text text-muted") We'll never share your email with anyone else.
+        div(class="form-group")
+          label(for="password") Password
+          input(type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required)
+        div(class="form-group")
+          label(for="password") Re-Type Your Password
+          input(type="password" name="password2" class="form-control" id="password" placeholder="Retype Password" required)
+        button(type="submit" class="btn btn-primary") Submit

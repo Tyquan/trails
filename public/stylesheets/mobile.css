@@ -1,0 +1,8 @@
+@media screen and (min-width: 320px) {
+    #auth {
+    	margin-top: 30%;
+    }
+    #content {
+    	width: 100%;
+    }
+}

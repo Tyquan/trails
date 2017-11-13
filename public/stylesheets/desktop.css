@@ -1,0 +1,13 @@
+@media screen and (min-width: 960px) {
+    #auth {
+    	margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    #auth {
+    	margin-left: 15%;
+    	margin-right: 15%;
+    }
+}
