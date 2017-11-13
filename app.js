@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const compression = require('compression');
 var session = require('express-session');
+var validator = require('express-validator');
 
 // mlab connection 
 const mongoUri = 'mongodb://Tyquan:Jamela17!@ds121665.mlab.com:21665/eown';
@@ -41,8 +42,7 @@ app.use(session({
   secret: 'keysessionsaidding',
   resave: false,
   saveUninitialized: true,
-  cookie: { path: "/", secure: true, maxAge: 1800000 },
-  name: "id"
+  cookie: {maxAge: 180 * 60 * 1000 }
 }))
 app.use(express.static(path.join(__dirname, 'public')));
 

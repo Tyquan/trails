@@ -7,16 +7,25 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+	if (!req.session.user) {
+	  	return res.status(400).send("You have to be logged in to view this section");
+	}
+	res.send('respond with a resource');
 });
 
 // Profile Page
 router.get('/profile', function(req, res, next) {
+  if (!req.session.user) {
+  	return res.status(400).send("You have to be logged in to view this section");
+  }
   res.render('user/profile');
 });
 
 // Tasks Page
 router.get('/tasks', function(req, res, next) {
+  if (!req.session.user) {
+  	return res.status(400).send("You have to be logged in to view this section");
+  }
   res.render('user/tasks');
 });
 
@@ -35,6 +44,7 @@ router.post('/signup', function(req, res, next) {
 			        user.save()
 			        	.then(function(data){
 			        		console.log("User saved");
+			        		req.session.user = data;
 			        		res.redirect('profile');
 			        	})
 			        	.catch(function(err){
@@ -58,14 +68,26 @@ router.post('/login', function(req, res, next) {
 	var body = req.body;
 	console.log(body);
 	User.findOne({username: body.username}, function(err, data){
+		if(err) {
+			return res.status(500).send();
+		}
+		if(!data) {
+			return res.status(500).send();
+		}
 		console.log("User Found, Checking Password...");
 		console.log(data);
 		bcrypt.compare(body.password, data.password).then(function(reser) {
 		    // res == true
 		    // fin
+		    req.session.user = data;
   			res.redirect('profile');
 		});
 	});
+});
+
+router.get('/logout', (req, res, next) => {
+	req.session.user = "";
+	res.render("./index");
 });
 
 module.exports = router;
