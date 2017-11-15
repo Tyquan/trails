@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const compression = require('compression');
 var session = require('express-session');
-var validator = require('express-validator');
 
 // mlab connection 
 const mongoUri = 'mongodb://Tyquan:Jamela17!@ds121665.mlab.com:21665/eown';
