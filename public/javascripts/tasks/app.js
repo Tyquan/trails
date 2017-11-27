@@ -82,9 +82,8 @@ class App {
 		let today = this.getTodaysDate();
 		for (let i = 0; i < this.taskList.length;  i++) {
 			if (this.taskList[i].dueDate < today) {
-				utterThis = new SpeechSynthesisUtterance(`${this.taskList[i].task} Has Went Past It's Due Date. It was supposed to be completed by ${this.taskList[i].task}`);
+				utterThis = new SpeechSynthesisUtterance(`${this.taskList[i].task} Has Went Past It's Due Date. It was supposed to be completed by ${this.taskList[i].dueDate}`);
 				synth.speak(utterThis);
-				alert(`Task: (${this.taskList[i].task}) Has Went Past It's Due Date.`);
 			}
 		}
 	}

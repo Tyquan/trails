@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  div(class="container-fluid")
+    div(class="row")
+      div(class="col-md-2")
+        include nav.jade
+      div(class="col-md-10")
+        div(id="interests")
+          div(class="row")
+            div(class="col")
+              h3(class="text-center") Add An Interest
+              div(id="addInterest")
+                form(method="POST" action="/users/interests")
+                  div(class="form-group")
+                    label(for="title") Title
+                    input(type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" placeholder="Enter Interest Title" required)
+                  div(class="form-group")
+                    label(for="reason") Reason
+                    input(type="text" class="form-control" id="title" aria-describedby="reasonHelp" name="reason" placeholder="Enter Interest Reason" required)
+          hr
+          div(class="row")
+            div(class="col")
+              h1(class="text-center") Your Interests
+          br
+          div(class="row")
+            div(class="col")
+              h3
+                button Interest Title

@@ -5,6 +5,9 @@ const InterestModelSchema = new Schema({
     title: {
     	type: String
     },
+    reason: {
+        type: String
+    },
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     creation_date: {
     	type: Date,

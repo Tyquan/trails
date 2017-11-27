@@ -7,3 +7,8 @@ block content
         include nav.jade
       div(class="col-md-10")
         h1(class="text-center") Profile Page
+        br
+        form(method="POST" action="/users/mineblock")
+          label(for="data.amount") Amount
+          input(type="number" class="form-control" id="amount" aria-describedby="amountHelp" name="data.amount" placeholder="Enter Amount" required)
+          button(type="submit" class="btn btn-primary") Mine Block
