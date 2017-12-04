@@ -14,10 +14,6 @@ class BlockChain{
         return this.chain[this.chain.length - 1];
     }
 
-    getBlocks(){
-        return this.chain;
-    }
-
     addBlock(newBlock) {
         newBlock.previousHash = this.getLatestBlock().hash;
         newBlock.mineBlock(this.difficulty);
