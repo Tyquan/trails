@@ -10,6 +10,10 @@ class BlockChain{
         return new Block(0, "01/01/2017", "Genesis block", "0");
     }
 
+    getBlocks() {
+        return this.chain;
+    }
+
     getLatestBlock() {
         return this.chain[this.chain.length - 1];
     }
@@ -36,6 +40,16 @@ class BlockChain{
 
         return true;
     }
+
+    replaceChain (newBlocks){
+        if (this.isValidChain(newBlocks) && newBlocks.length > this.block.length) {
+            console.log('Received blockchain is valid. Replacing current blockchain with received blockchain');
+            this.block = newBlocks;
+        } else {
+            console.log('Received blockchain invalid');
+        }
+    };
+
 }
 
 module.exports = BlockChain;

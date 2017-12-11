@@ -1,10 +1,10 @@
 var synth = window.speechSynthesis;
 var utterThis;
 
-class App {
+class Interest {
 	constructor(){
 		this.appName = 'Trails Interest Manager'; 
-		this.dbName = "INTEREST";
+		this.dbName = "INTERESTS";
 		this.author = 'Tyquan Reddick';
 		this.version = '1.0.0';
 		this.interstList = JSON.parse(localStorage.getItem(this.dbName));
@@ -30,14 +30,14 @@ class App {
 			<div class="col" id="interster">
 				<div class="row">
 					<div class="col-xs-12">
-						<label><input id="toggleinterstStatus" type="checkbox" onchange="app.toggleinterstStatus(${index})" value="" class="" ${interst.isComplete?'checked':''}> interst Complete?</label>
+						<label><input id="toggleinterstStatus" type="checkbox" onchange="interst.toggleinterstStatus(${index})" value="" class="" ${interst.isComplete?'checked':''}> interst Complete?</label>
 						<h3>${interst.interst}</h3>
 						<hr>
 						<p><b>${interst.category}</b></p>
 						<p>${interst.details}</p>
 						<p><small><i>Due Date:</i> ${interst.dueDate}</small></p>
 						<div class="delete-icon-area">
-							<a class="" href="/" onClick="app.deleteinterst(event, ${index})">
+							<a class="" href="/" onClick="interst.deleteinterst(event, ${index})">
 								<i id="deleteinterst" data-id="${index}" class="delete-icon glyphicon glyphicon-trash"> Delete</i>
 							</a>
 						</div>
@@ -50,7 +50,7 @@ class App {
 	// Load all interests in the database
 	loadInterests() {
 		let interestsHtml =	this.interstList.reduce((html, interst, index) => html += this.generateinterstHtml(interst, index), '');
-		document.getElementById('app').innerHTML =	interstsHtml;
+		document.getElementById('interst').innerHTML =	interstsHtml;
 
 		// added for local storage persistance
 		localStorage.setItem(this.dbName, JSON.stringify(this.interstList));
@@ -71,7 +71,7 @@ class App {
 
 }
 
-let app;
+let interst;
 window.addEventListener("load", () => {
-	app = new App();
+	interst = new Interest();
 });

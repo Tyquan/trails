@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('index', {
+  	title: "Tenzo",
+  	description: "An app that allows you to manage life in in the present using the latest technology."
+  });
 });
 
 router.get('/signup', function(req, res, next) {

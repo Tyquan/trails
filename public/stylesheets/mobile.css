@@ -2,7 +2,54 @@
     #auth {
     	margin-top: 30%;
     }
+    .navbar-light .navbar-brand {
+      color: white;
+    }
     #content {
     	width: 100%;
     }
+    #main-navbar {
+      background-color: #2A2641;
+      color: white;
+    }
+    #adminVideoContainer {
+	    width: 100%;
+	    height: 100%;
+	    visibility: hidden;
+	}
+	#callOptions {
+    width: 100%;
+    height: 50px;
+    visibility: hidden;
+  }
+  #textEditor {
+    width: 100%;
+    height: 100%;
+  }
+  #startButton {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    color: white;
+  }
+  #recordButton {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    color: white;
+  }
+  #startRecording {
+    /*display: hidden;*/
+  }
+  #indexBg {
+    width: 100%;
+    height: 670px;
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/db/e3/1f/dbe31f3db4125a79e7dde21c3fd4506b.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 5%;
+    font-size: 1.5em;
+  }
 }

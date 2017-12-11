@@ -2,6 +2,12 @@
     #auth {
     	margin-top: 10%;
     }
+    #startRecording {
+        visibility: hidden;
+    }
+    #stopRecording {
+        visibility: hidden;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -9,5 +15,9 @@
     #auth {
     	margin-left: 15%;
     	margin-right: 15%;
+    }
+
+    #office-marg {
+    	margin-top: 5%;
     }
 }
