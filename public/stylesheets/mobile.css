@@ -12,6 +12,19 @@
       background-color: #2A2641;
       color: white;
     }
+
+    #main-navbar a {
+      color: white;
+    }
+
+    #main-navbar a:link {
+      color: white;
+    }
+
+    #main-navbar a:hover {
+      color: white;
+    }
+
     #adminVideoContainer {
 	    width: 100%;
 	    height: 100%;
@@ -43,7 +56,7 @@
   }
   #indexBg {
     width: 100%;
-    height: 670px;
+    height: 615px;
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/db/e3/1f/dbe31f3db4125a79e7dde21c3fd4506b.jpg");
     background-size: cover;
     background-position: center;
@@ -52,4 +65,35 @@
     padding: 5%;
     font-size: 1.5em;
   }
+
+  #indexMarg {
+    padding-top: 30%;
+  }
+
+  #bit-details {
+    background-color: #2574A9;
+    color: white;
+    padding: 2%;
+  }
+
+  #margy {
+    margin-top: 15%;
+  }
+
+  #margy2 {
+    margin-top: 53%;
+  }
+
+  #margy3 {
+    margin-top: 25%;
+  }
+
+  footer {
+    background-color: #2A2641;
+    color: white;
+    height: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
 }
