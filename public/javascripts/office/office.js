@@ -44,7 +44,9 @@ function successCallback(gotStream) {
     console.log(chunks);
 
     stopRecording.addEventListener("click", function() {
+        //mediaRecorder.getAudioTracks()[0].stop();
         mediaRecorder.stop();
+        video.pause();
         console.log(mediaRecorder.state);
         console.log("recorder stopped");
     });
