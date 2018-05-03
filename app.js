@@ -9,7 +9,7 @@ const compression = require('compression');
 const session = require('express-session');
 
 // mlab connection 
-const mongoUri = 'mongodb://Tyquan:Jamela17!@ds121665.mlab.com:21665/eown';
+const mongoUri = 'mongodb://Tyquan:Jamela17!@ds135926.mlab.com:35926/mocky';
 // mongoose mlab connection
 mongoose.connect(mongoUri, {
   useMongoClient: true

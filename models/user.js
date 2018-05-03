@@ -11,16 +11,20 @@ const UserModelSchema = new Schema({
     	required: true
     },
     firstName: {
-    	type: String
+    	type: String,
+        default: 'N/A'
     },
     lastName: {
-    	type: String
+    	type: String,
+        default: 'N/A'
     },
     city: {
-    	type: String
+    	type: String,
+        default: 'N/A'
     },
     state: {
-    	type: String
+    	type: String,
+        default: 'N/A'
     },
     role: {
     	type: String,
@@ -34,10 +38,6 @@ const UserModelSchema = new Schema({
     following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     creation_date: {
     	type: Date,
-    	default: Date.now
-    },
-    updated: {
-    	type: Date, 
     	default: Date.now
     }
 });
