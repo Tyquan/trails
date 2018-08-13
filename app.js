@@ -22,6 +22,11 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const index = require('./routes/index');
 const users = require('./routes/users');
+const profile = require('./routes/profile');
+const office = require('./routes/office');
+const tasks = require('./routes/tasks');
+const interests = require('./routes/interests');
+const bitcoin = require('./routes/bitcoin');
 
 const app = express();
 
@@ -47,6 +52,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/profile', profile);
+app.use('/office', office);
+app.use('/tasks', tasks);
+app.use('/interests', interests);
+app.use('/bitcoin', bitcoin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
