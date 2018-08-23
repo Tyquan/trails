@@ -7,6 +7,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const compression = require('compression');
 const session = require('express-session');
+const request = require('request');
+
+const twentFourHours = 86400000;
 
 // mlab connection 
 const mongoUri = 'mongodb://Tyquan:Jamela17!@ds135926.mlab.com:35926/mocky';
@@ -49,6 +52,25 @@ app.use(session({
   cookie: {maxAge: 180 * 60 * 1000 }
 }))
 app.use(express.static(path.join(__dirname, 'public')));
+
+const BitcoinModel = require('./models/bitcoin');
+
+setInterval(() => {
+  request({
+    url: "https://blockchain.info/stats?format=json",
+    json: true
+  }, function(error, response, body) {
+    console.log(`${body.market_price_usd}`);
+    let bit = new BitcoinModel({
+      price: body.market_price_usd
+    });
+    bit.save().then((data) => {
+      console.log(`Saved new data: ${data}`);
+    }).catch((err) => {
+      throw(err);
+    });
+  });
+}, twentFourHours);
 
 app.use('/', index);
 app.use('/users', users);

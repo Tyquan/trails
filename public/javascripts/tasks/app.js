@@ -9,7 +9,7 @@ class App {
 		this.version = '1.0.0';
 		this.taskList = JSON.parse(localStorage.getItem(this.dbName));
 		if (!this.taskList) {
-			utterThis = new SpeechSynthesisUtterance(`Hi, I'm Kevin. I'm a sentient digital Robot here to help you manage your tasks. Welcome to ${this.appName} - ${this.version} created by ${this.author}. I  will Load a Pre-defined ${this.dbName} Database since none were found.`);
+			utterThis = new SpeechSynthesisUtterance(`Hi, I'm Kevin. I'm a digital Robot here to help you manage your tasks. Welcome to ${this.appName} - ${this.version} created by ${this.author}. I  will Load a Pre-defined ${this.dbName} Database since none were found.`);
 			synth.speak(utterThis);
 			this.taskList = [
 				{task: 'Study', isComplete: false, details: 'Study Math, and Science', category: 'School', dueDate: this.getTodaysDate()},

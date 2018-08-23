@@ -5,6 +5,7 @@ const bitcore = require("bitcore-lib");
 
 const Block = require("../classes/block");
 const BlockChain = require("../classes/blockchain");
+const BitcoinModel = require('../models/bitcoin');
 
 router.get("/", function(req, res) {
 	if (!req.session.user) {
@@ -17,6 +18,16 @@ router.get("/", function(req, res) {
 		res.render('user/bitcoin', {
 			bit: body
 		});
+	});
+});
+
+router.get("/mydata", (req, res, next) => {
+	BitcoinModel.find((err, data) => {
+		if (err) {
+			next(err);
+		} else {
+			res.status(200).json(data);
+		}
 	});
 });
 

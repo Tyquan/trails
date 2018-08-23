@@ -8,6 +8,14 @@
     #stopRecording {
         visibility: hidden;
     }
+
+    li {
+        list-style: none;
+    }
+    #userNav {
+        height: 100vh;
+        margin-top: 25%;
+    }
 }
 
 @media screen and (min-width: 992px) {
