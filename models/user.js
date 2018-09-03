@@ -34,6 +34,7 @@ const UserModelSchema = new Schema({
         type: Boolean
     },
     interests: [{ type: Schema.Types.ObjectId, ref: 'Interest' }],
+    posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
     followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     creation_date: {

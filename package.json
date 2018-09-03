@@ -11,6 +11,7 @@
     "bcrypt": "^1.0.3",
     "bitcore-lib": "^0.15.0",
     "body-parser": "~1.18.2",
+    "cheerio": "^1.0.0-rc.2",
     "compression": "^1.7.1",
     "connect-mongo": "^2.0.0",
     "cookie-parser": "~1.4.3",
@@ -23,6 +24,7 @@
     "jade": "~1.11.0",
     "mongoose": "^4.13.1",
     "morgan": "~1.9.0",
+    "request-promise": "^4.2.2",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {

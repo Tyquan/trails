@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const compression = require('compression');
 const session = require('express-session');
+const cors = require('cors')
 const request = require('request');
 
 const twentFourHours = 86400000;
@@ -25,11 +26,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const index = require('./routes/index');
 const users = require('./routes/users');
-const profile = require('./routes/profile');
+const home = require('./routes/home');
 const office = require('./routes/office');
 const tasks = require('./routes/tasks');
 const interests = require('./routes/interests');
 const bitcoin = require('./routes/bitcoin');
+const moneyNews = require('./routes/moneyNews');
+const posts = require('./routes/posts');
 
 const app = express();
 
@@ -43,6 +46,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.use(cookieParser());
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
@@ -74,11 +78,13 @@ setInterval(() => {
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/profile', profile);
+app.use('/home', home);
 app.use('/office', office);
 app.use('/tasks', tasks);
 app.use('/interests', interests);
 app.use('/bitcoin', bitcoin);
+app.use('/moneyNews', moneyNews);
+app.use('/posts', posts);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

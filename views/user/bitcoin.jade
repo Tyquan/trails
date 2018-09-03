@@ -1,7 +1,7 @@
 extends ../layout
 
 block content
-  div(class="container-fluid")
+  div(class="container")
     div(class="row")
       div(class="col-md-2")
         include nav.jade
@@ -32,3 +32,4 @@ block content
             br
             input(type="submit" value="create" class="btn btn-success")
   div(id="margy")
+  script(src="/javascripts/bitcoin/chart.js")

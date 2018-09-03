@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  div(class="container")
+    div(class="row")
+      div(class="col-md-2")
+        include nav.jade
+      div(class="col-md-8")
+        div(id="block-profile")
+          form(class="form")
+            textarea(type="text" placeholder="Share what's on your mind" class="form-control")
+            br
+            button(type="submit" class="btn btn-primary" id="form") Post
+      div(class="col-md-2")
+        
+  div(id="margy")
+  script(src="/javascripts/posts/addPost.js")

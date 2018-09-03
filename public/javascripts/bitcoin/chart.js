@@ -22,7 +22,7 @@ class BitcoinChart {
 	}
 	getBitcoinData(){
 		let prices = [];
-		$.getJSON("http://localhost:3000/bitcoin/mydata", (data) => {
+		$.getJSON("https://trails11225.herokuapp.com/bitcoin/mydata", (data) => {
 			$.each(data, (i, field) => {
 				prices.push(field.price);
 			});
