@@ -60,7 +60,8 @@
   #indexBg {
     width: 100%;
     height: 615px;
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/db/e3/1f/dbe31f3db4125a79e7dde21c3fd4506b.jpg");
+    /*background-image: url("https://s-media-cache-ak0.pinimg.com/originals/db/e3/1f/dbe31f3db4125a79e7dde21c3fd4506b.jpg");*/
+    background-image: url("../images/weemapleBg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -122,8 +123,8 @@
     background-color: #2A2641;
     color: white;
     height: 100%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
   }
 
 }

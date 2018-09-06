@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-  	title: "Tenzo",
+  	title: "Weemaple",
   	description: "An app that allows you to manage life in in the present using the latest technology."
   });
 });
