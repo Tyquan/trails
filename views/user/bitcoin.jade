@@ -1,35 +1,32 @@
-extends ../layout
+extends layout
 
 block content
-  div(class="container")
+  include nav.jade
+  main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
+    h1(class="text-center") CryptoCurrency:
+    hr
     div(class="row")
-      div(class="col-md-2")
-        include nav.jade
-      div(class="col-md-10")
-        h1(class="text-center") Blockchain:
-        hr
-        div(class="row")
-          div(class="col-sm-3")
-            div(id="bit-details")
-              div(class="col")
-                h1(class="text-center") Bitcoin
-                hr
-              p Current Price: 
-                span= bit.market_price_usd
-              p Already Mined: 
-                span= bit.n_btc_mined
-              p Total Bitcoins: 
-                span= bit.totalbc
-              p Bitcoins Left: 
-                span= bit.totalbc - bit.n_btc_mined
-          div(class="col-sm-3")
-          div(class="col-sm-3")
-        hr
-        div(class="container")
-          h1 Create a Wallet
-          form(method="POST" action="/")
-            input(type="text" name="tenzosrc" class="form-control" placeholder="Name of Your Custom Wallet")
-            br
-            input(type="submit" value="create" class="btn btn-success")
+      div(class="col-sm-3")
+        div(id="bit-details")
+          div(class="col")
+            h1(class="text-center") Bitcoin
+            hr
+          p Current Price: 
+            span= bit.market_price_usd
+          p Already Mined: 
+            span= bit.n_btc_mined
+          p Total Bitcoins: 
+            span= bit.totalbc
+          p Bitcoins Left: 
+            span= bit.totalbc - bit.n_btc_mined
+      div(class="col-sm-3")
+      div(class="col-sm-3")
+    hr
+    div(class="container")
+      h1 Create a New Bitcoin Wallet
+      form(method="POST" action="/")
+        input(type="text" name="tenzosrc" class="form-control" placeholder="Name of Your Custom Wallet")
+        br
+        input(type="submit" value="create" class="btn btn-success")
   div(id="margy")
   script(src="/javascripts/bitcoin/chart.js")
