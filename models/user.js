@@ -33,7 +33,26 @@ const UserModelSchema = new Schema({
     loggedIn: {
         type: Boolean
     },
-    expenses: [{ type: Schema.Types.ObjectId, ref: 'Expense' }],
+    expenses: [{ 
+        title: {
+            type: String
+        },
+        amount: {
+            type: Number,
+            required: true
+        },
+        category: {
+            type: String,
+            required: true
+        },
+        due_date: {
+            type: Date
+        },
+        create_date: {
+            type: Date,
+            default: Date.now
+        }
+    }],
     interests: [{ type: Schema.Types.ObjectId, ref: 'Interest' }],
     posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
     followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
@@ -42,6 +61,8 @@ const UserModelSchema = new Schema({
     	type: Date,
     	default: Date.now
     }
+}, {
+  usePushEach: true
 });
 
 // Compile model from schema

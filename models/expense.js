@@ -13,10 +13,6 @@ const ExpenseModelSchema = new Schema({
     	type: String,
     	required: true
     },
-    author: {
-    	type: Schema.Types.ObjectId,
-    	ref: 'User'
-    },
     due_date: {
     	type: Date
     },
@@ -24,6 +20,12 @@ const ExpenseModelSchema = new Schema({
     	type: Date,
     	default: Date.now
     }
+});
+
+new mongoose.Schema({
+  username: String
+}, {
+  usePushEach: true
 });
 
 // Compile model from schema
