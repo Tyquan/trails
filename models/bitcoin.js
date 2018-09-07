@@ -12,6 +12,6 @@ const BitcoinModelSchema = new Schema({
 });
 
 // Compile model from schema
-const BitcoinModel = mongoose.model('BitcoinModel', BitcoinModelSchema );
+const Bitcoin = mongoose.model('Bitcoin', BitcoinModelSchema );
 
-module.exports = BitcoinModel;
+module.exports = Bitcoin;

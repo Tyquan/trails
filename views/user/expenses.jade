@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  include nav.jade
+  main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
+    h1(class="text-center") Expenses:
+    hr
+    button(class="btn btn-primary" id="showBtn") Show Add Expense Feature
+    br
+    div(id="hideMe")
+      div(class="row")
+        div(class="col-sm-12")
+          form(action="/expenses" method="POST")
+            input(type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" placeholder="Expense Title" required)
+            input(type="number" class="form-control" id="amount" aria-describedby="amountHelp" name="amount" placeholder="Expense Amount" required)
+            select(id="category" name="category" class="form-control" placeholder="Category")
+              option(value="")
+              option(value="charity") Charity
+              option(value="clothing") Clothing
+              option(value="education") Education
+              option(value="food") Food / Drinks
+              option(value="gifts") Gifts
+              option(value="personal") Health / Personal
+              option(value="home") Home / Utilities
+              option(value="leisure") Leisure
+              option(value="loans") Loans
+              option(value="taxes") Taxes
+              option(value="transport") Transport
+              option(value="other") Other
+            input(type="date" class="form-control" id="due_date" aria-describedby="due_dateHelp" name="due_date" placeholder="Expense Due Date" required)
+            button(class="btn btn-primary") Add New Expense
+    br
+    div(class="row")
+      div(class="col-sm-12")
+        div("table-responsive")
+          table(class="table table-bordered table-striped table-hover table-condensed")
+            tr
+              th Amount
+              th Title
+              th Category
+              th Due Date
+            each d in data
+              tr
+              td= d.amount
+              td= d.title
+              td= d.category
+              td= d.due_date
+  script(src="/javascripts/expenses/showForm.js")

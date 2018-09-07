@@ -33,6 +33,7 @@ const UserModelSchema = new Schema({
     loggedIn: {
         type: Boolean
     },
+    expenses: [{ type: Schema.Types.ObjectId, ref: 'Expense' }],
     interests: [{ type: Schema.Types.ObjectId, ref: 'Interest' }],
     posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
     followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
