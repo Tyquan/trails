@@ -34,6 +34,7 @@ const bitcoin = require('./routes/bitcoin');
 const moneyNews = require('./routes/moneyNews');
 const posts = require('./routes/posts');
 const expenses = require('./routes/expenses');
+const incomes = require('./routes/incomes');
 
 const app = express();
 
@@ -87,6 +88,7 @@ app.use('/bitcoin', bitcoin);
 app.use('/moneyNews', moneyNews);
 app.use('/posts', posts);
 app.use('/expenses', expenses);
+app.use('/incomes', incomes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

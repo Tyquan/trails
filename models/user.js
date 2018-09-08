@@ -53,6 +53,23 @@ const UserModelSchema = new Schema({
             default: Date.now
         }
     }],
+    incomes: [{ 
+        title: {
+            type: String
+        },
+        amount: {
+            type: Number,
+            required: true
+        },
+        category: {
+            type: String,
+            required: true
+        },
+        create_date: {
+            type: Date,
+            default: Date.now
+        }
+    }],
     interests: [{ type: Schema.Types.ObjectId, ref: 'Interest' }],
     posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
     followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],

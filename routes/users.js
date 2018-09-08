@@ -17,19 +17,16 @@ router.get('/', function(req, res, next) {
 router.post('/signup', function(req, res, next) {
 	console.log(req.body);
 	if (req.body.password == req.body.password2) {
-		console.log("Password good");
 		var user = new User(req.body);
 		bcrypt.genSalt(saltRounds, function(err, salt) {
 		    bcrypt.hash(user.password, salt)
 			    .then(function(hash) {
 			        // Store hash in your password DB.
 			        user.password = hash;
-			        console.log("Hashed");
 			        user.save()
 			        	.then(function(data){
-			        		console.log("User saved");
 			        		req.session.user = data;
-			        		res.redirect('home');
+			        		res.redirect('/home');
 			        	})
 			        	.catch(function(err){
 			    			console.log(err);
@@ -48,9 +45,7 @@ router.post('/signup', function(req, res, next) {
 
 // log a user in
 router.post('/login', function(req, res, next) {
-	console.log("Before checking anything.");
 	var body = req.body;
-	console.log(body);
 	User.findOne({username: body.username}, function(err, data){
 		if(err) {
 			return res.status(500).send();
@@ -58,8 +53,6 @@ router.post('/login', function(req, res, next) {
 		if(!data) {
 			return res.status(500).send();
 		}
-		console.log("User Found, Checking Password...");
-		console.log(data);
 		bcrypt.compare(body.password, data.password).then(function(reser) {
 		    // res == true
 		    // fin
