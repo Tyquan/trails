@@ -5,6 +5,10 @@ const BitcoinModelSchema = new Schema({
     price: {
         type: Number
     },
+    modelV: {
+        type: String,
+        default: 'Bitcoin'
+    },
     timestamp: {
     	type: Date,
     	default: Date.now

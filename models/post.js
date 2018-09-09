@@ -7,10 +7,12 @@ const PostSchema = new Schema({
         required: true
     },
     user: {
-    	type: Schema.Types.ObjectId,
-    	ref: 'User'
+    	type: String
     },
-    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    modelV: {
+        type: String,
+        default: 'Post'
+    },
     create_date: {
     	type: Date,
     	default: Date.now

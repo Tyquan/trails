@@ -29,12 +29,11 @@ const users = require('./routes/users');
 const home = require('./routes/home');
 const office = require('./routes/office');
 const tasks = require('./routes/tasks');
-const interests = require('./routes/interests');
 const bitcoin = require('./routes/bitcoin');
-const moneyNews = require('./routes/moneyNews');
 const posts = require('./routes/posts');
 const expenses = require('./routes/expenses');
 const incomes = require('./routes/incomes');
+const dashboard = require('./routes/dashboard');
 
 const app = express();
 
@@ -61,12 +60,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const BitcoinModel = require('./models/bitcoin');
 
+
+
 setInterval(() => {
   request({
     url: "https://blockchain.info/stats?format=json",
     json: true
   }, function(error, response, body) {
-    console.log(`${body.market_price_usd}`);
+    //console.log(`${body.market_price_usd}`);
     let bit = new BitcoinModel({
       price: body.market_price_usd
     });
@@ -76,19 +77,18 @@ setInterval(() => {
       throw(err);
     });
   });
-}, twentFourHours);
+}, 600000 * 6/*twentFourHours/8*/);
 
 app.use('/', index);
 app.use('/users', users);
 app.use('/home', home);
 app.use('/office', office);
 app.use('/tasks', tasks);
-app.use('/interests', interests);
 app.use('/bitcoin', bitcoin);
-app.use('/moneyNews', moneyNews);
 app.use('/posts', posts);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
+app.use('/dashboard', dashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -13,6 +13,10 @@ const IncomeModelSchema = new Schema({
     	type: String,
     	required: true
     },
+    modelV: {
+        type: String,
+        default: 'Income'
+    },
     due_date: {
     	type: Date
     },

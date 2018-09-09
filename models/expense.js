@@ -13,6 +13,10 @@ const ExpenseModelSchema = new Schema({
     	type: String,
     	required: true
     },
+    modelV: {
+        type: String,
+        default: 'Expense'
+    },
     due_date: {
     	type: Date
     },

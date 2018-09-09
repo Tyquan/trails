@@ -6,8 +6,15 @@ block content
     div(class="row")
       div(class="col-sm-12")
         div(id="block-profile")
-          form(class="form")
-            textarea(type="text" placeholder="Share what's on your mind" class="form-control")
+          form(class="form" method="POST" action="/home")
+            textarea(type="text" name="body" placeholder="Share with the community" class="form-control")
             br
             button(type="submit" class="btn btn-primary" id="form") Post
-  script(src="/javascripts/posts/addPost.js")
+    div(class="row")
+      each d in data
+        div(class="col-sm-12")
+          div(id="block-profile")
+            h4= d.user
+            p= d.body
+            p
+              small= d.create_date

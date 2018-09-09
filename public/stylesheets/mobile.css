@@ -5,6 +5,13 @@
     #auth {
     	margin-top: 30%;
     }
+
+    #incomeTotal {
+      color: green
+    }
+    #expenseTotal {
+      color: red
+    }
     .navbar-light .navbar-brand {
       color: white;
     }

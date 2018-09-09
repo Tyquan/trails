@@ -3,8 +3,6 @@ const router = express.Router();
 const request = require('request');
 const bitcore = require("bitcore-lib");
 
-const Block = require("../classes/block");
-const BlockChain = require("../classes/blockchain");
 const BitcoinModel = require('../models/bitcoin');
 
 router.get("/", function(req, res) {
