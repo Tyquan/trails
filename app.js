@@ -9,11 +9,12 @@ const compression = require('compression');
 const session = require('express-session');
 const cors = require('cors')
 const request = require('request');
+const settings = require('./config/settings')
 
 const twentFourHours = 86400000;
 
 // mlab connection 
-const mongoUri = 'mongodb://Tyquan:Jamela17!@ds135926.mlab.com:35926/mocky';
+const mongoUri = settings.dbURI;
 // mongoose mlab connection
 mongoose.connect(mongoUri, {
   useMongoClient: true
@@ -51,7 +52,7 @@ app.use(cors());
 app.use(cookieParser());
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: 'keysessionsaidding',
+  secret: settings.secret,
   resave: false,
   saveUninitialized: true,
   cookie: {maxAge: 180 * 60 * 1000 }
