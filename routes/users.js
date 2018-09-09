@@ -26,7 +26,7 @@ router.post('/signup', function(req, res, next) {
 			        user.save()
 			        	.then(function(data){
 			        		req.session.user = data;
-			        		res.redirect('/home');
+			        		res.redirect('/dashboard');
 			        	})
 			        	.catch(function(err){
 			    			console.log(err);
@@ -57,7 +57,7 @@ router.post('/login', function(req, res, next) {
 		    // res == true
 		    // fin
 		    req.session.user = data;
-  			res.redirect('/home');
+  			res.redirect('/dashboard');
 		});
 	});
 });

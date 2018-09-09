@@ -77,7 +77,7 @@ setInterval(() => {
       throw(err);
     });
   });
-}, 600000 * 6/*twentFourHours/8*/);
+}, 14400000/*twentFourHours/8*/);
 
 app.use('/', index);
 app.use('/users', users);
