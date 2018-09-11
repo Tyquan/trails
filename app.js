@@ -38,17 +38,12 @@ const dashboard = require('./routes/dashboard');
 
 const app = express();
 
-app.use(compression());
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-// uncomment after placing your favicon in /public
+app.use(compression({level: 1}));
+app.use(cors());
 app.use(favicon(path.join(__dirname, 'public', 'images/weemaple2.jpg')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
 app.use(cookieParser());
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
@@ -56,7 +51,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {maxAge: 180 * 60 * 1000 }
-}))
+}));
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, 'public')));
 
 const BitcoinModel = require('./models/bitcoin');
