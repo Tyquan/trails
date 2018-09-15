@@ -9,6 +9,6 @@
 $.ajax({
 	url: 'http://localhost:3000/api/incomes',
 	success: (data) => {
-		console.log(data);
+		alert(data);
 	}
 });
