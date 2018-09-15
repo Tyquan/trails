@@ -2,6 +2,9 @@
   body {
     background-color: #ecf0f1;
   }
+  /*#hideData {
+    visibility: hidden;
+  }*/
     #auth {
     	margin-top: 30%;
     }

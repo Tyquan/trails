@@ -25,6 +25,8 @@ const db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+const incomeApi = require('./api/incomes');
+
 const index = require('./routes/index');
 const users = require('./routes/users');
 const home = require('./routes/home');
@@ -87,6 +89,9 @@ app.use('/posts', posts);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
 app.use('/dashboard', dashboard);
+
+// API
+app.use('/api/incomes', incomeApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

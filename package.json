@@ -4,12 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "concurrently --kill-others \"nodemon ./bin/www\" \"npx babel --watch src --out-dir public/javascripts/react --presets react-app/prod \"",
+    "dev": "nodemon ./bin/www",
     "test": "mocha ./tests/test"
   },
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
     "bcrypt": "^1.0.3",
     "bitcore-lib": "^0.15.0",
     "body-parser": "~1.18.2",
@@ -26,15 +24,11 @@
     "jade": "~1.11.0",
     "mongoose": "^4.13.1",
     "morgan": "~1.9.0",
-    "pm2": "^3.1.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
     "request-promise": "^4.2.2",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "concurrently": "^4.0.1",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "sinon": "^4.1.2",

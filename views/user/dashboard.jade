@@ -15,3 +15,13 @@ block content
       div(class="col-sm-4")
         h4 Outcome: 
           span(id="swimResult")= swimResult
+    div(id="hideData")
+      div(class="row")
+        div(class="col-md-12")
+          each income in incomes
+            p(id="incomeAmount")= income.amount
+            p(id="incomeDate")= income.create_date
+          each expense in expenses
+            p(id="expenseAmount")= expense.amount
+            p(id="exenseDate")= expense.create_date
+  script(src="/javascripts/charts/income-expense.js")
