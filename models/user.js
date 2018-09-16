@@ -31,7 +31,8 @@ const UserModelSchema = new Schema({
     	default: 'user'
     },
     loggedIn: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
     expenses: [{ 
         title: {

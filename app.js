@@ -26,6 +26,7 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const incomeApi = require('./api/incomes');
+const expenseApi = require('./api/expenses');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -37,6 +38,8 @@ const posts = require('./routes/posts');
 const expenses = require('./routes/expenses');
 const incomes = require('./routes/incomes');
 const dashboard = require('./routes/dashboard');
+const connect = require('./routes/connect');
+const profile = require('./routes/profile');
 
 const app = express();
 
@@ -77,7 +80,7 @@ setInterval(() => {
       throw(err);
     });
   });
-}, 14400000/*twentFourHours/8*/);
+}, 28800000);
 
 app.use('/', index);
 app.use('/users', users);
@@ -89,9 +92,12 @@ app.use('/posts', posts);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
 app.use('/dashboard', dashboard);
+app.use('/connect', connect);
+app.use('/profile', profile);
 
 // API
 app.use('/api/incomes', incomeApi);
+app.use('/api/expenses', expenseApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

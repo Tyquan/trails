@@ -22,9 +22,10 @@ class BitcoinChart {
 	}
 	getBitcoinData(){
 		let prices = [];
-		$.getJSON("http://weemaple.com/bitcoin/mydata", (data) => {
+		$.getJSON("/bitcoin/mydata", (data) => {
 			$.each(data, (i, field) => {
-				prices.push(field.price);
+				//prices.push(field.price);
+				prices.push(field);
 			});
 			if (prices.length == 0){
 	            return 0;
@@ -32,30 +33,37 @@ class BitcoinChart {
 	        else if(prices.length == 1) {
 	            return prices;
 	        }else {
+	        	console.log(prices);
 	            let sum = 0;
 	            for (let i = 0; i < prices.length; i++) {
-	                sum += prices[i];
+	                sum += prices[i].price;
 	            }
 	            sum = sum / prices.length;
 
-	            utterThis = new SpeechSynthesisUtterance(`The Average Price for 1 Bit coin between the date of August 21 2018 and today is ${sum} dollars`);
-				synth.speak(utterThis);
-				let beginPrice = prices[0];
-				let currentPrice = prices[prices.length - 1];
+	            let beginPrice = prices[0].price;
+	            //let beginDate = prices[0].timestamp.toDateString();
+	            let date = new Date(prices[0].timestamp);
+	            let beginDate = date.toDateString();
+				let currentPrice = prices[prices.length - 1].price;
+				//let currentDate = prices[prices.length - 1].timestamp.toDateString();
 				let difference = currentPrice - beginPrice;
-				utterThis = new SpeechSynthesisUtterance(`The Starting Price for 1 Bit coin on August 21 2018 was ${beginPrice} dollars and today the price is ${currentPrice} dollars`);
-				synth.speak(utterThis);
+
+	            utterThis = new SpeechSynthesisUtterance(`The Average Price for 1 Bit coin between the date of ${beginDate} and today is ${sum} dollars`);
+				// synth.speak(utterThis);
+
+				utterThis = new SpeechSynthesisUtterance(`The Starting Price for 1 Bit coin on ${beginDate} was ${beginPrice} dollars and today the price is ${currentPrice} dollars`);
+				// synth.speak(utterThis);
 
 				if (beginPrice < currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has risen over this time by ${difference}. Maybe you should buy some bitcoin`);
-					synth.speak(utterThis);
+					// synth.speak(utterThis);
 				} else if (beginPrice == currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The starting price and todays prices are the same.  Maybe you should look into other investments`);
-					synth.speak(utterThis);
+					// synth.speak(utterThis);
 				}
 				else {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has declined over this time by ${difference}. Maybe you should look into other investments`);
-					synth.speak(utterThis);
+					// synth.speak(utterThis);
 				}
 	        }
 		});

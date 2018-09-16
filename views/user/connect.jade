@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  include nav.jade
+  main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
+    div(class="row")
+      div(class="col-md-12")
+        each user in users
+          div(class="row")
+            div(class="col-sm-4")
+              div(id="block-profile")
+                p
+                  a(href="/profile/" + user._id)= user.firstName 
+                  span= user.lastName
+                p= user.city
+                p= user.state
+                p Followers: 
+                  span= user.followers.length
+                p Following: 
+                  span= user.following.length
