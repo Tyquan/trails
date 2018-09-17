@@ -3,7 +3,11 @@ extends layout
 block content
   include nav.jade
   main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
-    canvas(id="expenses-chart")
+    div(class="row")
+      div(class="col-sm-6")
+        canvas(id="expenses-chart")
+      div(class="col-sm-6")
+        canvas(id="expenses-pie")
     hr
     div(class="row")
       div(class="col-md-4")
@@ -53,4 +57,5 @@ block content
               td(id="due_date")= d.due_date
     div(id="margy")
   script(src="/javascripts/expenses/showForm.js")
-  script(src="/javascripts/charts/expenses.js")
+  script(src="/javascripts/charts/expensesline.js")
+  script(src="/javascripts/charts/expensespie.js")

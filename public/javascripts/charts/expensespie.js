@@ -1,4 +1,4 @@
-$.getJSON("/api/incomes", (data) => {
+$.getJSON("/api/expenses", (data) => {
 	let prices = [];
 	let dates = [];
 	let categories = [];
@@ -43,7 +43,7 @@ $.getJSON("/api/incomes", (data) => {
 		}]
 	};
 
-	var ctx = $("#income-chart");
+	var ctx = $("#expenses-pie");
 	var barGraph = new Chart(ctx, {
 		type: 'doughnut',
 		data: chartData
