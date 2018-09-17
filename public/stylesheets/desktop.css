@@ -6,6 +6,21 @@
     body {
         margin-bottom: 60px; /* Margin bottom by footer height */
     }
+
+    #bitcoin-chart {
+        width: 600px; 
+        height: 300px;
+    }
+    #densityChart {
+        width: 700px; 
+        height: 200px;
+    }
+    #desktopNav {
+        display: block;
+    }
+    #mobileNav {
+        display: none;
+    }
     .footer {
       position: absolute;
       bottom: 0;

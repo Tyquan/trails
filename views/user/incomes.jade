@@ -3,34 +3,40 @@ extends layout
 block content
   include nav.jade
   main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
-    h1(class="text-center") Incomes:
-    hr
-    button(class="btn btn-primary" id="showBtn") Show Add Income Feature
-    br
-    div(id="hideMe")
-      div(class="row")
-        div(class="col-sm-12")
-          form(action="/incomes" method="POST")
-            input(type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" placeholder="Income Title" required)
-            input(type="number" class="form-control" id="amount" aria-describedby="amountHelp" name="amount" placeholder="Income Amount" required)
-            select(id="category" name="category" class="form-control" placeholder="Category")
-              option(value="")
-              option(value="charity") Charity
-              option(value="clothing") Clothing
-              option(value="education") Education
-              option(value="food") Food / Drinks
-              option(value="gifts") Gifts
-              option(value="personal") Health / Personal
-              option(value="home") Home / Utilities
-              option(value="leisure") Leisure
-              option(value="loans") Loans
-              option(value="taxes") Taxes
-              option(value="transport") Transport
-              option(value="other") Other
-            button(class="btn btn-primary") Add New Income
-    br
     div(class="row")
-      div(class="col-sm-12")
+      div(class="col-sm-6")
+        canvas(id="incomeLine-chart")
+      div(class="col-sm-6")
+        canvas(id="income-chart")
+    hr
+    div(class="row")
+      div(class="col-md-4")
+        button(class="btn btn-primary" id="showBtn") Show Add Income Feature
+        br
+        div(id="hideMe")
+          div(class="row")
+            div(class="col-sm-12")
+              form(action="/incomes" method="POST")
+                br
+                label(for="title") Income Title
+                input(type="text" class="form-control" id="title" aria-describedby="titleHelp" name="title" placeholder="Income Title" required)
+                label(for="amount") Income Amount
+                input(type="number" class="form-control" id="amount" aria-describedby="amountHelp" name="amount" placeholder="Income Amount" required)
+                label(for="category") Category
+                select(id="category" name="category" class="form-control" placeholder="Category")
+                  option(value="")
+                  option(value="salary") Salary
+                  option(value="investments") Investments
+                  option(value="government") Government
+                  option(value="side") Side Hustle
+                  option(value="education") Education
+                  option(value="gifts") Gifts
+                  option(value="loans") Loans
+                  option(value="taxes") Taxes
+                  option(value="other") Other
+                br
+                button(class="btn btn-primary") Add New Income
+      div(class="col-md-8")
         div("table-responsive")
           table(class="table table-dark table-bordered table-hover table-condensed")
             tr
@@ -42,4 +48,7 @@ block content
               td= d.amount
               td= d.title
               td= d.category
+    div(id="margy")
   script(src="/javascripts/incomes/showForm.js")
+  script(src="/javascripts/charts/incomeline.js")
+  script(src="/javascripts/charts/income.js")

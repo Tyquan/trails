@@ -11,4 +11,7 @@ window.addEventListener('load', () => {
 			showBtn.innerHTML = "Show Add Expense Feature";
 		}
 	});
+
+	let due_date = document.getElementById('due_date');
+	
 });

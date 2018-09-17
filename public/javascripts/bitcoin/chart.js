@@ -49,21 +49,21 @@ class BitcoinChart {
 				let difference = currentPrice - beginPrice;
 
 	            utterThis = new SpeechSynthesisUtterance(`The Average Price for 1 Bit coin between the date of ${beginDate} and today is ${sum} dollars`);
-				// synth.speak(utterThis);
+				synth.speak(utterThis);
 
 				utterThis = new SpeechSynthesisUtterance(`The Starting Price for 1 Bit coin on ${beginDate} was ${beginPrice} dollars and today the price is ${currentPrice} dollars`);
-				// synth.speak(utterThis);
+				synth.speak(utterThis);
 
 				if (beginPrice < currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has risen over this time by ${difference}. Maybe you should buy some bitcoin`);
-					// synth.speak(utterThis);
+					synth.speak(utterThis);
 				} else if (beginPrice == currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The starting price and todays prices are the same.  Maybe you should look into other investments`);
-					// synth.speak(utterThis);
+					synth.speak(utterThis);
 				}
 				else {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has declined over this time by ${difference}. Maybe you should look into other investments`);
-					// synth.speak(utterThis);
+					synth.speak(utterThis);
 				}
 	        }
 		});

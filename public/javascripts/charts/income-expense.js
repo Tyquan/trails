@@ -20,22 +20,45 @@ $.getJSON("/api/incomes", (data) => {
             let nowDate = sow.toDateString();
             expenseDates.push(nowDate);
         }
-        Chart.defaults.global.defaultFontFamily = "Lato";
-        Chart.defaults.global.defaultFontSize = 18;
 
         var densityData = {
           label: 'Income',
           data: incomePrices,
-          backgroundColor: 'rgba(0,128,0)',
-          borderWidth: 0,
+          backgroundColor: "rgb(75,192,192,0.4)",
+          borderColor: "rgb(75,192,192,1)",
+          corderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "rgb(75,192,192,1)",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgb(75,192,192,1)",
+          pointHoverBorderColor: "rgb(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
           yAxisID: "y-axis-income"
         };
 
         var gravityData = {
           label: 'Expense',
           data: expensePrices,
-          backgroundColor: 'rgba(255,0,0)',
-          borderWidth: 0,
+          borderColor: "rgb(75,192,192,1)",
+          corderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "rgb(75,192,192,1)",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgb(75,192,192,1)",
+          pointHoverBorderColor: "rgb(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
           yAxisID: "y-axis-expense"
         };
 
@@ -69,7 +92,7 @@ $.getJSON("/api/incomes", (data) => {
         };
 
         var barChart = new Chart(densityCanvas, {
-          type: 'bar',
+          type: 'line',
           data: planetData,
           options: chartOptions
         });

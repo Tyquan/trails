@@ -2,9 +2,23 @@
   body {
     background-color: #ecf0f1;
   }
-  /*#hideData {
-    visibility: hidden;
-  }*/
+
+  #bitcoin-chart {
+     width: 100%; 
+     height: 300;
+  }
+
+  #densityChart {
+     width: 100%; 
+     height: 200;
+  }
+
+  #desktopNav {
+    display: none;
+  }
+  #mobileNav {
+    display: block;
+  }
 
   path { 
       stroke: steelblue;
@@ -78,9 +92,6 @@
     background-color: red;
     color: white;
   }
-  #startRecording {
-    /*display: hidden;*/
-  }
   #indexBg {
     width: 100%;
     height: 615px;
@@ -115,13 +126,9 @@
     margin-top: 25%;
   }
 
-  /* Profile Page */
 
   #block-profile {
     width: 100%;
-    /*height: 100%;*/
-    /*color: white;*/
-    /*padding-top: 7%;*/
     margin-top: 2%;
     padding: 2%;
     background-color: white;

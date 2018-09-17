@@ -9,10 +9,13 @@ block content
         hr
         div(class="row")
           div(class="col-md-4")
-            div(id="heads")
-              h3(class="text-center") Add A Task
+            button(class="btn btn-primary" id="showBtn") Show Add A Task Feature
             br
-            div(id="addTask")
+            div(id="hideMe")
+              div(id="heads")
+                h3(class="text-center") Add A Task
+              br
+              div(id="addTask")
           div(class="col-md-8")
             div(id="heads")
               h3(class="text-center") Uncompleted Tasks
@@ -20,5 +23,6 @@ block content
             div
               div(class="row" id="app")
   div(id="margy")
+  script(src="/javascripts/expenses/showForm.js")
   script(src="/javascripts/tasks/app.js")
   script(src="/javascripts/tasks/addTask.js")
