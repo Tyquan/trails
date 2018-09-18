@@ -1,6 +1,7 @@
 $.getJSON("/api/incomes", (data) => {
-  var densityCanvas = document.getElementById("densityChart");
-  
+
+  let densityCanvas = document.getElementById("densityChart");
+
   let incomePrices = [];
   let incomeDates = [];
 
