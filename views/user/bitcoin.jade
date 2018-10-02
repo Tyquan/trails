@@ -11,7 +11,7 @@ block content
           div(class="col")
             h1(class="text-center") Bitcoin
             hr
-          p Current Price: 
+          p Current Price: $
             span= bit.market_price_usd
           p Already Mined: 
             span= bit.n_btc_mined
@@ -21,6 +21,23 @@ block content
             span= bit.totalbc - bit.n_btc_mined
       div(class="col-sm-9")
         canvas(id="bitcoin-chart")
+    hr
+    div(class="row")
+      div(class="col-md-12")
+        h2 Statistics
+        br
+        p Average Price: $
+          span= average
+        p Highest Price For 1 Bitcoin: $
+          span= max
+        p Lowest Price For 1 Bitcoin: $
+          span= min
+        p Dispersion: $
+          span= dispersion
+        p Variance: $
+          span= variance
+        p Standard Deviation: $
+          span= standardDeviation
     hr
     div(class="container")
       h1 Create a New Bitcoin Wallet

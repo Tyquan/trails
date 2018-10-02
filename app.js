@@ -9,9 +9,7 @@ const compression = require('compression');
 const session = require('express-session');
 const cors = require('cors')
 const request = require('request');
-const settings = require('./config/settings')
-
-const twentFourHours = 86400000;
+const settings = require('./config/settings');
 
 // mlab connection 
 const mongoUri = settings.dbURI;
