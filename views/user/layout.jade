@@ -22,7 +22,7 @@ html
         nav(class="navbar flex-md-nowrap p-0 shadow" id="main-navbar")
           a(class="navbar-brand col-sm-3 col-md-2 mr-0" id="brand" href="#") Weemaple
           ul(class="navbar-nav px-3")
-            li(class="nav-item text-nowrap")
+            li(class="nav-item text-nowrap" id="signout")
               a(class="nav-link" href="/users/logout") Sign Out
       div(id="mobileNav")
         include topnav.jade
@@ -34,3 +34,4 @@ html
         div(class="row")
           div(class="col")
             h4(class="text-center" id="brand") Weemaple 2018
+    script(src="javascripts/auth.js")

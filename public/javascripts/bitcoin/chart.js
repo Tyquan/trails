@@ -4,7 +4,7 @@ var utterThis;
 class BitcoinChart {
 	constructor(){
 		this.name = "Bitcoin BarChart";
-		if (localStorage.getItem('Weemaple-Speak-Data') == null) {
+		if (!localStorage.getItem('Weemaple-Speak-Data') == "true") {
 			this.getBitcoinData();
 			localStorage.setItem('Weemaple-Speak-Data', "true");
 		}
@@ -54,7 +54,7 @@ class BitcoinChart {
 				let difference = currentPrice - beginPrice;
 				let lastDifference = currentPrice - lastPrice
 
-				utterThis = new SpeechSynthesisUtterance(`The Price of one bitcoin has changed since yesterday. Yesterday ${oldDate} the price was ${lastPrice} and today it is ${currentPrice} so far. That is a difference of ${lastDifference.toFixed(2)}`);
+				utterThis = new SpeechSynthesisUtterance(`The Price of one bitcoin has changed since yesterday. Yesterday ${oldDate} the price was ${lastPrice} dollars and today it is ${currentPrice} dollars. That is a difference of ${lastDifference.toFixed(2)} dollars`);
 				synth.speak(utterThis);
 
 				utterThis = new SpeechSynthesisUtterance(`The Starting Price for 1 Bit coin on ${beginDate} was ${beginPrice} dollars.`);
@@ -74,6 +74,17 @@ class BitcoinChart {
 	        }
 		});
 	}
+	splitPrice(input){
+		let string = String(input);
+		if (input.contains(".")) {
+			let arrays = input.split(".");
+
+			let last = [];
+			return arrays;
+		} else {
+			return input;
+		}
+	}
 	loadBitcoinData(){
 		return "hi";
 	}
@@ -82,4 +93,8 @@ class BitcoinChart {
 let bit;
 window.addEventListener('load', () => {
 	bit = new BitcoinChart();
+	let explainData = document.getElementById('explainData');
+	explainData.addEventListener('click', () => {
+		bit.getBitcoinData();
+	});
 });

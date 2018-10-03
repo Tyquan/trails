@@ -1,10 +1,12 @@
 body {
   padding: 0px;
   margin: 0px;
+  text-decoration: none;
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
 }
 
 

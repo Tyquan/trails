@@ -19,6 +19,8 @@ block content
             span= bit.totalbc
           p Bitcoins Left: 
             span= bit.totalbc - bit.n_btc_mined
+        br
+        button(class="btn btn-outline-primary btn-lg btn-block" id="explainData") Explain Data
       div(class="col-sm-9")
         canvas(id="bitcoin-chart")
     hr

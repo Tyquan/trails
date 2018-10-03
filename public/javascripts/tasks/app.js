@@ -9,18 +9,18 @@ class App {
 		this.version = '1.0.0';
 		this.taskList = JSON.parse(localStorage.getItem(this.dbName));
 		if (!this.taskList) {
-			utterThis = new SpeechSynthesisUtterance(`Hi, I'm Kevin. I'm a digital Robot here to help you manage your tasks. Welcome to ${this.appName} - ${this.version} created by ${this.author}. I  will Load a Pre-defined ${this.dbName} Database since none were found.`);
+			utterThis = new SpeechSynthesisUtterance(`Hi, I'm Kevin. I'm a digital Robot here to help you manage your tasks. Welcome to ${this.appName} - version ${this.version} created by ${this.author}. I  will Load a Pre-defined ${this.dbName} Database since none were found.`);
 			synth.speak(utterThis);
 			this.taskList = [
 				{task: 'Study', isComplete: false, details: 'Study Math, and Science', category: 'School', dueDate: this.getTodaysDate()},
 				{task: 'Go To Sleep', isComplete: false, details: 'Sleep for at least 6 hours', category: 'Home', dueDate: this.getTodaysDate()},
 			];
-			utterThis = new SpeechSynthesisUtterance(`. Predefined Tasks have been Initiated! There are ${this.taskList.length} of them waiting to be completed. I hope you enjoy.`);
+			utterThis = new SpeechSynthesisUtterance(`. Predefined Tasks have been Initiated! There are ${this.taskList.length} of them waiting to be completed.`);
 			synth.speak(utterThis);
 			//alert(`Welcome to ${this.appName} - ${this.version} created by ${this.author}.\nPredefined Tasks have been Initiated! I hope you enjoy.`);
 		} else {
 			//console.log(`Loading ${this.dbName} from the localStorage Database...`);
-			utterThis = new SpeechSynthesisUtterance(`I have taken the liberty of Loading ${this.dbName} from the local Storage Database. There are ${this.taskList.length} of them waiting to be completed. I hope you enjoy.`);
+			utterThis = new SpeechSynthesisUtterance(`There are ${this.taskList.length} tasks waiting to be completed.`);
 			synth.speak(utterThis);
 		}
 		this.loadTasks();
@@ -41,7 +41,7 @@ class App {
 						<p><small><i>Due Date:</i> ${task.dueDate}</small></p>
 						<div class="delete-icon-area">
 							<a class="" href="/" onClick="app.deleteTask(event, ${index})">
-								<i id="deleteTask" data-id="${index}" class="delete-icon glyphicon glyphicon-trash"> Delete</i>
+								<i id="deleteTask" data-id="${index}" class="btn btn-outline-danger btn-lg btn-block"> Delete</i>
 							</a>
 						</div>
 					</div>
@@ -80,6 +80,7 @@ class App {
 
 	exposeOldTasks(){
 		let today = this.getTodaysDate();
+		console.log(today);
 		for (let i = 0; i < this.taskList.length;  i++) {
 			if (this.taskList[i].dueDate < today) {
 				utterThis = new SpeechSynthesisUtterance(`${this.taskList[i].task} Has Went Past It's Due Date. It was supposed to be completed by ${this.taskList[i].dueDate}`);
