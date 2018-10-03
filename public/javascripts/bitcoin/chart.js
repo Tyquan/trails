@@ -4,7 +4,11 @@ var utterThis;
 class BitcoinChart {
 	constructor(){
 		this.name = "Bitcoin BarChart";
-		this.getBitcoinData();
+		if (localStorage.getItem('Weemaple-Speak-Data') == null) {
+			this.getBitcoinData();
+			localStorage.setItem('Weemaple-Speak-Data', "true");
+		}
+		console.log(localStorage.getItem('Weemaple-Speak-Data'));
 
 	}
 	generateHtml(data, index) {
@@ -51,21 +55,21 @@ class BitcoinChart {
 				let lastDifference = currentPrice - lastPrice
 
 				utterThis = new SpeechSynthesisUtterance(`The Price of one bitcoin has changed since yesterday. Yesterday ${oldDate} the price was ${lastPrice} and today it is ${currentPrice} so far. That is a difference of ${lastDifference.toFixed(2)}`);
-				//synth.speak(utterThis);
+				synth.speak(utterThis);
 
 				utterThis = new SpeechSynthesisUtterance(`The Starting Price for 1 Bit coin on ${beginDate} was ${beginPrice} dollars.`);
-				//synth.speak(utterThis);
+				synth.speak(utterThis);
 
 				if (beginPrice < currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has risen over this time by ${difference.toFixed(2)}. Maybe you should buy some bitcoin`);
-					//synth.speak(utterThis);
+					synth.speak(utterThis);
 				} else if (beginPrice == currentPrice) {
 					utterThis = new SpeechSynthesisUtterance(`The starting price and todays prices are the same.  Maybe you should look into other investments`);
-					//synth.speak(utterThis);
+					synth.speak(utterThis);
 				}
 				else {
 					utterThis = new SpeechSynthesisUtterance(`The Price for 1 Bit coin has declined over this time by ${difference.toFixed(2)}. Maybe you should look into other investments`);
-					//synth.speak(utterThis);
+					synth.speak(utterThis);
 				}
 	        }
 		});

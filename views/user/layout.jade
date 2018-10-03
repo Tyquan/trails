@@ -6,6 +6,7 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title= title
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Dosis|Lobster+Two|Righteous" rel="stylesheet")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="stylesheet" media="screen and (min-device-width: 320px)" href="/stylesheets/mobile.css")
     link(rel="stylesheet" media="screen and (min-device-width: 640px)" href="/stylesheets/tablet.css")
@@ -18,8 +19,8 @@ html
   body
     div(id="iffy")
       div(id="desktopNav")
-        nav(class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow")
-          a(class="navbar-brand col-sm-3 col-md-2 mr-0" href="#") Weemaple
+        nav(class="navbar flex-md-nowrap p-0 shadow" id="main-navbar")
+          a(class="navbar-brand col-sm-3 col-md-2 mr-0" id="brand" href="#") Weemaple
           ul(class="navbar-nav px-3")
             li(class="nav-item text-nowrap")
               a(class="nav-link" href="/users/logout") Sign Out
@@ -32,4 +33,4 @@ html
       div(class="container")
         div(class="row")
           div(class="col")
-            h4(class="text-center") Weemaple 2018
+            h4(class="text-center" id="brand") Weemaple 2018

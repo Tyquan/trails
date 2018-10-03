@@ -1,30 +1,31 @@
-nav(class="navbar navbar-dark bg-dark flex-md-nowrap p-0 shadow")
-  a(class="navbar-brand" href="#") Weemaple
-  button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-    span(class="navbar-toggler-icon")
-  div(class="collapse navbar-collapse" id="navbarSupportedContent")
-    ul(class="navbar-nav mr-auto")
-      li(class="nav-item")
-        a(class="nav-link" href="/dashboard")
-          i(class="fas fa-chart-line") 
-            span Dashboard
-      li(class="nav-item")
-        a(class="nav-link" href="/expenses")
-          i(class="fas fa-donate") 
-            span Expenses
-      li(class="nav-item")
-        a(class="nav-link" href="/incomes")
-          i(class="fas fa-comments-dollar") 
-            span Incomes
-      li(class="nav-item")
-        a(class="nav-link" href="/tasks")
-          i(class="far fa-list-alt") 
-            span Tasks
-      li(class="nav-item")
-        a(class="nav-link" href="/bitcoin")
-          i(class="fab fa-btc") 
-            span CryptoCurrency
-      li(class="nav-item")
-        a(class="nav-link" href="/users/logout")
-          i(class="fab fa-btc") 
-            span Signout
+nav(class="navbar flex-md-nowrap p-0 shadow" id="main-navbar")
+  div(class="container")
+    a(class="navbar-brand" href="#") Weemaple
+    button(class="navbar-toggler" id="buttonBg" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+      span(class="navbar-toggler-icon" id="navIcon")
+    div(class="collapse navbar-collapse" id="navbarSupportedContent")
+      ul(class="navbar-nav mr-auto")
+        li(class="nav-item")
+          a(class="nav-link" href="/dashboard")
+            i(class="fas fa-chart-line") 
+              span Dashboard
+        li(class="nav-item")
+          a(class="nav-link" href="/expenses")
+            i(class="fas fa-donate") 
+              span Expenses
+        li(class="nav-item")
+          a(class="nav-link" href="/incomes")
+            i(class="fas fa-comments-dollar") 
+              span Incomes
+        li(class="nav-item")
+          a(class="nav-link" href="/tasks")
+            i(class="far fa-list-alt") 
+              span Tasks
+        li(class="nav-item")
+          a(class="nav-link" href="/bitcoin")
+            i(class="fab fa-btc") 
+              span CryptoCurrency
+        li(class="nav-item")
+          a(class="nav-link" href="/users/logout")
+            i(class="fab fa-btc") 
+              span Signout

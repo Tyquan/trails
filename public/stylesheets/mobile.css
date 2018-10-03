@@ -1,6 +1,16 @@
 @media screen and (min-width: 320px) {
   body {
     background-color: #ecf0f1;
+    font-family: 'Dosis', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Righteous', cursive;
+  }
+
+  #brand {
+    font-family: 'Lobster Two', cursive;
+    font-size: 1.4em;
   }
 
   #bitcoin-chart {
@@ -34,7 +44,10 @@
       shape-rendering: crispEdges;
   }
     #auth {
-    	margin-top: 30%;
+    	background: white;
+      padding: 5%;
+      margin-top: 15%;
+      border-radius: 10px;
     }
 
     #incomeTotal {
@@ -50,8 +63,7 @@
     	width: 100%;
     }
     #main-navbar {
-      background-color: #2A2641;
-      color: white;
+      background-color: #6ab04c;
     }
 
     #main-navbar a {
@@ -94,18 +106,17 @@
   }
   #indexBg {
     width: 100%;
-    height: 615px;
-    background-image: url("../images/weemapleBg.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 5%;
+    height: 100%;
+    background-color: white;
+    color: black;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
     font-size: 1.5em;
   }
 
   #indexMarg {
-    padding-top: 30%;
+    padding-top: 5%;
   }
 
   #bit-details {
@@ -119,7 +130,7 @@
   }
 
   #margy2 {
-    margin-top: 53%;
+    margin-top: 20%;
   }
 
   #margy3 {
@@ -149,8 +160,14 @@
     background-color: #6c5ce7;
   }
 
+  #navIcon {
+    color: white;
+    background-color: white;
+    border-radius: 15px;
+  }
+
   footer {
-    background-color: #2A2641;
+    background-color: #6ab04c;
     color: white;
     height: 100%;
     padding-top: 1%;

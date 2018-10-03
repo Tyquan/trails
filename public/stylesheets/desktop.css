@@ -3,9 +3,6 @@
       position: relative;
       min-height: 100%;
     }
-    body {
-        margin-bottom: 60px; /* Margin bottom by footer height */
-    }
 
     #bitcoin-chart {
         width: 600px; 
@@ -56,7 +53,14 @@
     }
 
     #margy {
-        padding-bottom: 3%;
+        padding-bottom: 5%;
+        margin-top: 1%;
+    }
+    #indexMarg {
+        padding-top: 5%;
+    }
+    #indexBg {
+        height: 537px;
     }
 }
 
@@ -69,8 +73,5 @@
 
     #office-marg {
     	margin-top: 5%;
-    }
-    #indexMarg {
-        padding-top: 10%;
     }
 }
