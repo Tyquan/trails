@@ -1,6 +1,6 @@
-let prices = [];
-let dates = [];
 $.getJSON("/api/expenses", (data) => {
+	let prices = [];
+	let dates = [];
 	for(let i = 0; i < data.length; i++) {
 		prices.push(data[i].amount);
 		let date = new Date(data[i].create_date);

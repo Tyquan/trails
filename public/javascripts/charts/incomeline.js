@@ -1,7 +1,7 @@
-let prices = [];
-let dates = [];
-let categories = [];
 $.getJSON("/api/incomes", (data) => {
+	let prices = [];
+	let dates = [];
+	let categories = [];
 	for(let i = 0; i < data.length; i++) {
 		prices.push(data[i].amount);
 		let date = new Date(data[i].create_date);

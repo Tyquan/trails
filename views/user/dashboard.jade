@@ -4,17 +4,22 @@ block content
   include nav.jade
   main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
     div(class="row")
-      div(class="col-sm-12")
-        canvas(id="densityChart")
-    hr
+      div(class="col-md-6")
+        canvas(id="incomeLine-chart")
+      div(class="col-md-6")
+        canvas(id="expenses-chart")
+    br
     div(class="row")
-      div(class="col-xs-4")
-        h4(class="text-center") Income: 
+      div(class="col-md-4")
+        h4(class="text-center") Income 
           span(id="incomeTotal")= incomeTotal
-      div(class="col-xs-4")
-        h4(class="text-center") Expenses: 
+      div(class="col-md-4")
+        h4(class="text-center") Expenses 
           span(id="expenseTotal")= expenseTotal
-      div(class="col-xs-4")
-        h4(class="text-center") Outcome: 
+      div(class="col-md-4")
+        h4(class="text-center") Result 
           span(id="swimResult")= swimResult
-  script(src="/javascripts/charts/income-expense.js")
+    hr
+  script(src="/javascripts/charts/incomeline.js")
+  script(src="/javascripts/charts/expensesline.js")
+  script(src="/javascripts/dashboard.js")
