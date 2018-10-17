@@ -12,14 +12,14 @@ html
     link(rel="stylesheet" media="screen and (min-device-width: 640px)" href="/stylesheets/tablet.css")
     link(rel="stylesheet" media="screen and (min-device-width: 960px)" href="/stylesheets/desktop.css")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js")
   body
     nav(class="navbar navbar-light" id="main-navbar")
       div(class="container")
         span(class="navbar-brand mb-0 h1" id="brand")
           a(href="/") Weemaple
-    div(class="content-container")
-      block content
-      footer
+    block content
+    footer
         div(class="container")
           div(class="row")
             div(class="col")

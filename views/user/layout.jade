@@ -16,14 +16,16 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
+    script(src="javascripts/menu.js")
   body
     div(id="iffy")
       div(id="desktopNav")
         nav(class="navbar flex-md-nowrap p-0 shadow" id="main-navbar")
-          a(class="navbar-brand col-sm-3 col-md-2 mr-0" id="brand" href="#") Weemaple
-          ul(class="navbar-nav px-3")
-            li(class="nav-item text-nowrap" id="signout")
-              a(class="nav-link" href="/users/logout") Sign Out
+          div(class="container")
+            a(class="navbar-brand col-sm-3 col-md-2 mr-0" id="brand" href="#") Weemaple
+            div(class="px-3")
+              h5 
+                a(href="/users/logout") Signout
       div(id="mobileNav")
         include topnav.jade
     div(class="container-fluid")
@@ -34,4 +36,3 @@ html
         div(class="row")
           div(class="col")
             h4(class="text-center" id="brand") Weemaple 2018
-    script(src="javascripts/auth.js")

@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 	if (!req.session.user) {
 		return res.status(400).send("You have to be logged in to view this section");
 	}
-	res.render('user/expenses', {
+	res.render('user/finance/expenses', {
 		data: req.session.user.expenses
 	})
 });

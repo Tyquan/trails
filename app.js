@@ -25,6 +25,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const incomeApi = require('./api/incomes');
 const expenseApi = require('./api/expenses');
+const userApi = require('./api/users');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
@@ -96,6 +97,7 @@ app.use('/profile', profile);
 // API
 app.use('/api/incomes', incomeApi);
 app.use('/api/expenses', expenseApi);
+app.use('/api/users', userApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

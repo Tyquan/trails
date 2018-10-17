@@ -4,6 +4,12 @@
       min-height: 100%;
     }
 
+    #menuHide {
+        width: 20%;
+        height: 100%;
+        display: none;
+    }
+
     #bitcoin-chart {
         width: 600px; 
         height: 300px;

@@ -29,7 +29,7 @@ router.get("/", function(req, res) {
 				let dispersion = dis.toFixed(2);
 				let variance = pan.variance(prices).toFixed(2);
 				let standardDeviation = pan.standardDeviation(prices).toFixed(2);
-				res.render('user/bitcoin', {
+				res.render('user/finance/bitcoin', {
 					bit: body,
 					prices: prices,
 					average: average,
