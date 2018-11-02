@@ -85,6 +85,7 @@ const UserModelSchema = new Schema({
             default: Date.now
         } 
     }],
+    jobs: [{ type: Schema.Types.ObjectId, ref: 'Job' }],
     followers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     following: [{ type: Schema.Types.ObjectId, ref: 'User' }],
     creation_date: {

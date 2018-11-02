@@ -1,1 +1,0 @@
-# Website location www.trails11225.herokuapp.com

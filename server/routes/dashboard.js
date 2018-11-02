@@ -22,7 +22,6 @@ router.get("/", function(req, res) {
 	}
 
 	let swimResult = incomeTotal - expenseTotal;
-	console.log("swimResult", swimResult);
 
 	res.render('user/dashboard', {
 		incomes: req.session.user.incomes,

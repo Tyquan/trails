@@ -37,14 +37,13 @@ const posts = require('./routes/posts');
 const expenses = require('./routes/expenses');
 const incomes = require('./routes/incomes');
 const dashboard = require('./routes/dashboard');
-const connect = require('./routes/connect');
 const profile = require('./routes/profile');
 
 const app = express();
 
 app.use(compression({level: 1}));
 app.use(cors());
-app.use(favicon(path.join(__dirname, 'public', 'images/weemaple2.jpg')));
+app.use(favicon(path.join(__dirname, '../client', 'images/weemaple2.jpg')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -58,7 +57,7 @@ app.use(session({
 }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 const BitcoinModel = require('./models/bitcoin');
 
@@ -91,7 +90,6 @@ app.use('/posts', posts);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
 app.use('/dashboard', dashboard);
-app.use('/connect', connect);
 app.use('/profile', profile);
 
 // API
