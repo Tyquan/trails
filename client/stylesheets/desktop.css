@@ -4,6 +4,10 @@
       min-height: 100%;
     }
 
+    #secondNav {
+        display: flex;
+    }
+
     #menuHide {
         width: 20%;
         height: 100%;

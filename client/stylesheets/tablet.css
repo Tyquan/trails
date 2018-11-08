@@ -13,4 +13,7 @@
 	#callOptions {
 	  visibility: visible;
 	}
+    #secondNav {
+        display: none;
+    }
 }

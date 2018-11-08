@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
-const bitcore = require("bitcore-lib");
-
-const BitcoinModel = require('../models/bitcoin');
 
 router.get("/", function(req, res) {
 	if (!req.session.user) {

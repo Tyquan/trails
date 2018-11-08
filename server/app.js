@@ -30,14 +30,9 @@ const userApi = require('./api/users');
 const index = require('./routes/index');
 const users = require('./routes/users');
 const home = require('./routes/home');
-const office = require('./routes/office');
-const tasks = require('./routes/tasks');
-const bitcoin = require('./routes/bitcoin');
-const posts = require('./routes/posts');
 const expenses = require('./routes/expenses');
 const incomes = require('./routes/incomes');
 const dashboard = require('./routes/dashboard');
-const profile = require('./routes/profile');
 
 const app = express();
 
@@ -59,38 +54,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, '../client')));
 
-const BitcoinModel = require('./models/bitcoin');
-
-
-
-setInterval(() => {
-  request({
-    url: "https://blockchain.info/stats?format=json",
-    json: true
-  }, function(error, response, body) {
-    //console.log(`${body.market_price_usd}`);
-    let bit = new BitcoinModel({
-      price: body.market_price_usd
-    });
-    bit.save().then((data) => {
-      console.log(`Saved new data: ${data}`);
-    }).catch((err) => {
-      throw(err);
-    });
-  });
-}, 28800000);
-
 app.use('/', index);
 app.use('/users', users);
 app.use('/home', home);
-app.use('/office', office);
-app.use('/tasks', tasks);
-app.use('/bitcoin', bitcoin);
-app.use('/posts', posts);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
 app.use('/dashboard', dashboard);
-app.use('/profile', profile);
 
 // API
 app.use('/api/incomes', incomeApi);

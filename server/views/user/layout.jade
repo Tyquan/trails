@@ -16,7 +16,7 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous")
-    script(src="javascripts/menu.js")
+    script(src="js/menu.js")
   body
     div(id="iffy")
       div(id="desktopNav")
@@ -26,6 +26,26 @@ html
             div(class="px-3")
               h5 
                 a(href="/users/logout") Signout
+      nav(class="navbar navbar-expand-lg navbar-light bg-light" id="secondNav")
+          div(class="container")
+            ul( class="navbar-nav mr-auto")
+              li(class="nav-item")
+                a(class="nav-link" href="/dashboard") Dashboard
+              li(class="nav-item dropdown")
+                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Finance
+                  div(class="dropdown-menu" aria-labelledby="navbarDropdown")
+                    a(class="dropdown-item" href="/incomes") Incomes
+                    a(class="dropdown-item" href="/expenses") Expenses
+              li(class="nav-item dropdown")
+                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Social
+                  div(class="dropdown-menu" aria-labelledby="navbarDropdown")
+                    a(class="dropdown-item" href="#") Posts
+                    a(class="dropdown-item" href="#") Your Connections
+              li(class="nav-item dropdown")
+                a(class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Marketplace
+                  div(class="dropdown-menu" aria-labelledby="navbarDropdown")
+                    a(class="dropdown-item" href="#") For Sale
+                    a(class="dropdown-item" href="#") Your Products
       div(id="mobileNav")
         include topnav.jade
     div(class="container-fluid")

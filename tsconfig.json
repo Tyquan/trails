@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": "client/js/"
+  },
+  "include": [
+    "client/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
