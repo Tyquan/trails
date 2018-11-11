@@ -1,20 +1,20 @@
-$.getJSON("/api/incomes", (data) => {
+$.getJSON("/api/incomes", (data: any[]) => {
 
-  let densityCanvas = document.getElementById("densityChart");
+  let densityCanvas: any = document.getElementById("densityChart");
 
-  let incomePrices = [];
-  let incomeDates = [];
+  let incomePrices: number[] = [];
+  let incomeDates: string[] = [];
 
-  let expensePrices = [];
-  let expenseDates = [];
+  let expensePrices: number[] = [];
+  let expenseDates: string[] = [];
 
-  for(let i = 0; i < data.length; i++) {
+  for(let i: number = 0; i < data.length; i++) {
       incomePrices.push(data[i].amount);
       let date = new Date(data[i].create_date);
       let beginDate = date.toDateString();
       incomeDates.push(beginDate);
   }
-  $.getJSON("/api/expenses", (d) => {
+  $.getJSON("/api/expenses", (d: any[]) => {
       for(let i = 0; i < d.length; i++) {
           expensePrices.push(d[i].amount);
           let sow = new Date(d[i].create_date);
@@ -22,7 +22,7 @@ $.getJSON("/api/incomes", (data) => {
           expenseDates.push(nowDate);
       }
 
-      var densityData = {
+      var densityData: object = {
         label: 'Income',
         data: incomePrices,
         backgroundColor: "rgb(75,192,192,0.4)",
@@ -43,7 +43,7 @@ $.getJSON("/api/incomes", (data) => {
         yAxisID: "y-axis-income"
       };
 
-      var gravityData = {
+      var gravityData: object = {
         label: 'Expense',
         data: expensePrices,
         borderColor: "rgb(75,192,192,1)",
@@ -73,12 +73,12 @@ $.getJSON("/api/incomes", (data) => {
           }
       };
 
-      var planetData = {
+      var planetData: object = {
         labels: expenseDates,
         datasets: [densityData, gravityData]
       };
 
-      var chartOptions = {
+      var chartOptions: object = {
         scales: {
           xAxes: [{
             barPercentage: 1,

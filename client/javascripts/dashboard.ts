@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-	let result = document.getElementById('swimResult');
+	let result: any = document.getElementById('swimResult');
 	if (result.value < 0) {
 		result.style.color = "red";
 	} 

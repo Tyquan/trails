@@ -1,14 +1,14 @@
-extends layout
+extends ../layout
 
 block content
   include nav.jade
   main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
     div(class="row")
-      div(class="col-md-10")
+      div(class="col-md-8")
         div(class="row")
           div(class="col-sm-12")
             div(id="block-profile")
-              form(class="form" method="POST" action="/home")
+              form(class="form")
                 textarea(type="text" name="body" placeholder="Share with the community" class="form-control")
                 br
                 button(type="submit" class="btn btn-primary" id="form") Post
@@ -16,8 +16,12 @@ block content
           each d in data
             div(class="col-sm-12")
               div(id="block-profile")
-                h4= d.user
+                h4= d.username
+                hr
                 p= d.body
                 p
                   small= d.create_date
-      div(class="col-md-2")
+        div(id="midMarg")
+      div(class="col-md-4")
+  script(src="/js/social/posts/addpost.js")
+  script(src="/js/social/posts/myposts.js")

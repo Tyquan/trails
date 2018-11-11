@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  include nav.jade
+  main(role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4")
+    div(class="row")
+      div(class="col-sm-8")
+        div(id="block-profile")
+          form(class="form")
+            textarea(type="text" name="body" placeholder="Share with the community" class="form-control")
+            br
+            button(type="submit" class="btn btn-primary" id="form") Post
+        div(class="row")
+          div(id="allposts")
+        div(id="midMarg")
+      div(class="col-sm-4")
+  script(src="/js/social/posts/addpost.js")
+  script(src="/js/social/posts/allposts.js")

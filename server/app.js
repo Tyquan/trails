@@ -26,13 +26,16 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 const incomeApi = require('./api/incomes');
 const expenseApi = require('./api/expenses');
 const userApi = require('./api/users');
+const postApi = require('./api/social/posts');
 
 const index = require('./routes/index');
 const users = require('./routes/users');
-const home = require('./routes/home');
-const expenses = require('./routes/expenses');
-const incomes = require('./routes/incomes');
 const dashboard = require('./routes/dashboard');
+const expenses = require('./routes/finance/expenses');
+const incomes = require('./routes/finance/incomes');
+const mypost = require('./routes/social/mypost');
+const community = require('./routes/social/community');
+
 
 const app = express();
 
@@ -56,15 +59,17 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/home', home);
 app.use('/expenses', expenses);
 app.use('/incomes', incomes);
 app.use('/dashboard', dashboard);
+app.use('/myposts', mypost);
+app.use('/community',community);
 
 // API
 app.use('/api/incomes', incomeApi);
 app.use('/api/expenses', expenseApi);
 app.use('/api/users', userApi);
+app.use('/api/social/posts', postApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

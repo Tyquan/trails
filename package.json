@@ -9,9 +9,10 @@
   },
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "concurrently \"nodemon ./bin/www\" \"tsc -w\" "
   },
   "dependencies": {
+    "@types/chart.js": "^2.7.40",
     "@types/jquery": "^3.3.22",
     "bcrypt": "^1.0.3",
     "body-parser": "~1.18.2",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "concurrently": "^4.0.1",
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "sinon": "^4.1.2",

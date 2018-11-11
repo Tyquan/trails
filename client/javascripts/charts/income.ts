@@ -1,7 +1,7 @@
-$.getJSON("/api/incomes", (data) => {
-	let prices = [];
-	let dates = [];
-	let categories = [];
+$.getJSON("/api/incomes", (data: any[]) => {
+	let prices: number[] = [];
+	let dates: string[] = [];
+	let categories: any[] = [];
 	for(let i = 0; i < data.length; i++) {
 		prices.push(data[i].amount);
 		let date = new Date(data[i].create_date);
@@ -10,7 +10,7 @@ $.getJSON("/api/incomes", (data) => {
 		categories.push(data[i].category);
 	}
 	
-	var chartData = {
+	var chartData: object = {
 		labels: categories,
 		datasets: [{
 			label: "Income",
@@ -43,7 +43,7 @@ $.getJSON("/api/incomes", (data) => {
 		}]
 	};
 
-	var ctx = $("#income-chart");
+	var ctx: any = $("#income-chart");
 	var barGraph = new Chart(ctx, {
 		type: 'doughnut',
 		data: chartData

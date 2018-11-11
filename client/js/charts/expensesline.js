@@ -1,9 +1,9 @@
-$.getJSON("/api/expenses", function (data) {
+$.getJSON("/api/expenses", function (datas) {
     var prices = [];
     var dates = [];
-    for (var i = 0; i < data.length; i++) {
-        prices.push(data[i].amount);
-        var date = new Date(data[i].create_date);
+    for (var i = 0; i < datas.length; i++) {
+        prices.push(datas[i].amount);
+        var date = new Date(datas[i].create_date);
         var beginDate = date.toDateString();
         dates.push(beginDate);
     }

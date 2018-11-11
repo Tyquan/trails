@@ -1,14 +1,14 @@
-$.getJSON("/api/expenses", (data) => {
-	let prices = [];
-	let dates = [];
-	for(let i = 0; i < data.length; i++) {
-		prices.push(data[i].amount);
-		let date = new Date(data[i].create_date);
+$.getJSON("/api/expenses", (datas: any[]) => {
+	let prices: number[] = [];
+	let dates: string[] = [];
+	for(let i = 0; i < datas.length; i++) {
+		prices.push(datas[i].amount);
+		let date = new Date(datas[i].create_date);
     	let beginDate = date.toDateString();
 		dates.push(beginDate);
 	}
 	
-	var chartData = {
+	var chartData: object = {
 		labels: dates,
 		datasets: [{
 			label: "Expenses",
@@ -33,7 +33,7 @@ $.getJSON("/api/expenses", (data) => {
 		}]
 	};
 
-	var ctx = $("#expenses-chart");
+	var ctx: any = $("#expenses-chart");
 	var barGraph = new Chart(ctx, {
 		type: 'line',
 		data: chartData

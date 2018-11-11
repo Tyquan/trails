@@ -71,13 +71,15 @@ const UserModelSchema = new Schema({
             default: Date.now
         }
     }],
-    interests: [{ type: Schema.Types.ObjectId, ref: 'Interest' }],
     posts: [{ 
         body: {
             type: String,
             required: true
         },
         user: {
+            type: String,
+        },
+        username: {
             type: String,
         },
         create_date: {

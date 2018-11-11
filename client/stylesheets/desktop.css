@@ -3,7 +3,9 @@
       position: relative;
       min-height: 100%;
     }
-
+    #midMarg {
+        margin-bottom: 10%;
+    }
     #secondNav {
         display: flex;
     }
