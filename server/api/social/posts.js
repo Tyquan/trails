@@ -32,6 +32,8 @@ router.post('/', (req, res, next) => {
 			next(err);
 		} else {
 			req.body.username = req.session.user.username;
+			req.body.displayName = req.session.user.displayName;
+			req.body.imageUrl = req.session.user.imageUrl;
 			data.posts.push(req.body);
 			data.save().then((newUserData) => {
 				// save globally

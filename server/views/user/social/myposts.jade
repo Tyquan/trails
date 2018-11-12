@@ -13,14 +13,7 @@ block content
                 br
                 button(type="submit" class="btn btn-primary" id="form") Post
         div(class="row")
-          each d in data
-            div(class="col-sm-12")
-              div(id="block-profile")
-                h4= d.username
-                hr
-                p= d.body
-                p
-                  small= d.create_date
+          div(id="myposts")
         div(id="midMarg")
       div(class="col-md-4")
   script(src="/js/social/posts/addpost.js")

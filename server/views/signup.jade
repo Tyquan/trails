@@ -12,9 +12,15 @@ block content
           small(id="emailHelp" class="form-text text-muted") We will never share your email with anyone else.
         div(class="form-group")
           label(for="password") Password
-          input(type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required)
+          input(type="password" name="password" class="form-control" id="password" placeholder="Enter password" required)
         div(class="form-group")
           label(for="password") Re-Type Your Password
-          input(type="password" name="password2" class="form-control" id="password" placeholder="Retype Password" required)
+          input(type="password" name="password2" class="form-control" id="password2" placeholder="Retype password" required)
+        div(class="form-group")
+          label(for="displayName") Display Name
+          input(type="text" name="displayName" class="form-control" id="displayName" placeholder="Your display name" required)
+        div(class="form-group")
+          label(for="imageUrl") Image URL (Copy image address on any photo)
+          input(type="text" name="imageUrl" class="form-control" id="imageUrl" placeholder="Copy and paste an image address here" required)
         button(type="submit" class="btn btn-primary") Submit
   div(id="margy3")

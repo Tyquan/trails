@@ -6,7 +6,10 @@ const PostModelSchema = new Schema({
         type: String,
         required: true
     },
-    user: {
+    imageUrl: {
+        type: String,
+    },
+    displayName: {
         type: String,
     },
     username: {
@@ -15,7 +18,7 @@ const PostModelSchema = new Schema({
     create_date: {
         type: Date,
         default: Date.now
-    }
+    } 
 }, {
   usePushEach: true
 });

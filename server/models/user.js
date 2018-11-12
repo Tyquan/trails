@@ -10,6 +10,9 @@ const UserModelSchema = new Schema({
     	type: String,
     	required: true
     },
+    displayName: {
+        type: String,
+    },
     firstName: {
     	type: String,
         default: 'N/A'
@@ -17,6 +20,9 @@ const UserModelSchema = new Schema({
     lastName: {
     	type: String,
         default: 'N/A'
+    },
+    imageUrl: {
+        type: String
     },
     city: {
     	type: String,
@@ -76,7 +82,10 @@ const UserModelSchema = new Schema({
             type: String,
             required: true
         },
-        user: {
+        imageUrl: {
+            type: String,
+        },
+        displayName: {
             type: String,
         },
         username: {
