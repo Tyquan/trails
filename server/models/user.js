@@ -88,6 +88,10 @@ const UserModelSchema = new Schema({
         displayName: {
             type: String,
         },
+        postImage: {
+            data: Buffer,
+            contentType: String
+        },
         username: {
             type: String,
         },

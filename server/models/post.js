@@ -9,6 +9,10 @@ const PostModelSchema = new Schema({
     imageUrl: {
         type: String,
     },
+    postImage: {
+        data: Buffer,
+        contentType: String
+    },
     displayName: {
         type: String,
     },

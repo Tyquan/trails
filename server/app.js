@@ -5,6 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const multer = require('multer');
 const compression = require('compression');
 const session = require('express-session');
 const cors = require('cors')
@@ -55,6 +56,13 @@ app.use(session({
   saveUninitialized: true,
   cookie: {maxAge: 180 * 60 * 1000 }
 }));
+app.use(() => {
+  multer({ dest: './uploads/',
+   rename: function (fieldname, filename) {
+     return filename;
+   },
+  })
+});
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.static(path.join(__dirname, '../client')));

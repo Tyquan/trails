@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require("fs");
 const User = require('../../models/user');
 const Post = require('../../models/post');
 
@@ -31,6 +32,8 @@ router.post('/', (req, res, next) => {
 		if (err) {
 			next(err);
 		} else {
+			req.boby.postImage.data = fs.readFileSync(req.files.postImage.path)
+ 			req.boby.postImage.contentType = 'image/png';
 			req.body.username = req.session.user.username;
 			req.body.displayName = req.session.user.displayName;
 			req.body.imageUrl = req.session.user.imageUrl;
